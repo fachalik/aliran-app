@@ -293,7 +293,7 @@ export function Hero() {
         style={{
           margin: "56px auto 0",
           maxWidth: 1180,
-          height: "clamp(380px, 52vw, 560px)",
+          height: "clamp(260px, 52vw, 560px)",
           borderRadius: "var(--r-xl) var(--r-xl) 0 0",
           position: "relative",
           overflow: "hidden",

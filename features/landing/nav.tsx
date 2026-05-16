@@ -40,7 +40,7 @@ export function Nav() {
         </Link>
 
         <div
-          className="flex gap-1 pl-2"
+          className="hidden md:flex gap-1 pl-2"
           style={{ borderLeft: "1px solid var(--line)" }}
         >
           {[
@@ -51,7 +51,7 @@ export function Nav() {
             <a
               key={href}
               href={href}
-              className="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:bg-[var(--cream-200)]"
+              className="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:bg-(--cream-200)"
               style={{ color: "var(--ink-700)" }}
             >
               {label}

@@ -19,10 +19,8 @@ export function Footer() {
         style={{
           maxWidth: 1180,
           margin: "0 auto 48px",
-          display: "grid",
-          gridTemplateColumns: "1.4fr 1fr 1fr",
-          gap: 48,
         }}
+        className="grid grid-cols-1 sm:grid-cols-3 gap-10"
       >
         <div>
           <div className="mb-2 flex items-center gap-2">
@@ -137,7 +135,7 @@ export function Footer() {
       <div style={{ maxWidth: 1180, margin: "0 auto" }}>
         <Separator style={{ background: "var(--line)", marginBottom: 24 }} />
         <div
-          className="flex items-center justify-between"
+          className="flex flex-wrap items-center justify-between gap-2"
           style={{ fontSize: 12, color: "var(--ink-500)" }}
         >
           <span>© 2026 Aliran. Dibuat di Jakarta.</span>
