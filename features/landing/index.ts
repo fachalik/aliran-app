@@ -1,0 +1,12 @@
+export { Nav } from "./nav";
+export { Hero } from "./hero";
+export { LogoStrip } from "./logo-strip";
+export { Welcome } from "./welcome";
+export { KpiTiles } from "./kpi-tiles";
+export { CoreValues } from "./core-values";
+export { BotShowcase } from "./bot-showcase";
+export { CalendarShowcase } from "./calendar-showcase";
+export { Testimonial } from "./testimonial";
+export { Faq } from "./faq";
+export { FooterCta } from "./footer-cta";
+export { Footer } from "./footer";
