@@ -229,7 +229,7 @@ function TelegramMockup() {
           Sip! 🎉 Status diupdate ke <strong>paid</strong>.
         </div>
         <div style={{ color: "#667781", fontSize: 11.5 }}>
-          Chalik bakal verify pas duit masuk.
+          Alice bakal verify pas duit masuk.
         </div>
         <span
           style={{
