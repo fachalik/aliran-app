@@ -277,7 +277,7 @@ export function Hero() {
         }}
       >
         <Button className="rounded-full px-6 py-3.5 text-[15px]">
-          <a href="/signup">Coba gratis</a>
+          Coba Gratis
         </Button>
         <Button
           variant="ghost"

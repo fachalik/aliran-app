@@ -60,7 +60,7 @@ export function Nav() {
         </div>
 
         <Button size="sm" className="ml-2 rounded-full px-5">
-          <a href="/signup">Coba gratis</a>
+          Coba gratis
         </Button>
       </nav>
     </div>

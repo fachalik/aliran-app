@@ -46,7 +46,6 @@ export function FooterCta() {
           kopi siap.
         </p>
         <Button
-          render={<a href="/signup" aria-label="Daftar sekarang" />}
           size="lg"
           className="rounded-full px-8 text-base"
           style={{ background: "var(--cream-50)", color: "var(--forest-950)" }}
