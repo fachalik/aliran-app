@@ -32,7 +32,7 @@ export default function LandingPage() {
       <BotShowcase />
       <CalendarShowcase />
       {/* <Testimonial /> */}
-      <Faq />
+      {/* <Faq /> */}
       <FooterCta />
       <Footer />
     </div>
