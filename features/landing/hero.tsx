@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const CARDS = [
   {
@@ -276,16 +277,19 @@ export function Hero() {
           border: "1px solid var(--line)",
         }}
       >
-        <Button className="rounded-full px-6 py-3.5 text-[15px]">
+        <a
+          href="/signup"
+          className={cn(buttonVariants(), "rounded-full px-6 py-3.5 text-[15px]")}
+        >
           Coba Gratis
-        </Button>
-        <Button
-          variant="ghost"
-          className="rounded-full px-6 py-3.5 text-[15px]"
+        </a>
+        <a
+          href="#features"
+          className={cn(buttonVariants({ variant: "ghost" }), "rounded-full px-6 py-3.5 text-[15px]")}
           style={{ color: "var(--text)" }}
         >
-          <a href="#features">Lihat demo ↓</a>
-        </Button>
+          Lihat demo ↓
+        </a>
       </div>
 
       {/* Stage */}

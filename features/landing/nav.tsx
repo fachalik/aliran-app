@@ -1,13 +1,14 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export function Nav() {
   return (
     <div className="sticky top-4 z-50 flex justify-center px-4">
       <nav
-        className="flex items-center gap-1 rounded-full px-3 py-1.5"
+        className="flex items-center gap-1 rounded-full px-3 py-1.5 backdrop-blur-md"
         style={{
-          background: "var(--surface)",
+          background: "color-mix(in oklch, var(--cream-50) 85%, transparent)",
           border: "1px solid var(--line)",
           boxShadow: "var(--shadow-2)",
           paddingLeft: 18,
@@ -59,9 +60,12 @@ export function Nav() {
           ))}
         </div>
 
-        <Button size="sm" className="ml-2 rounded-full px-5">
+        <a
+          href="/signup"
+          className={cn(buttonVariants({ size: "sm" }), "ml-2 rounded-full px-5")}
+        >
           Coba gratis
-        </Button>
+        </a>
       </nav>
     </div>
   );

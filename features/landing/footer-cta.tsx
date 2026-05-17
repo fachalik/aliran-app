@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function FooterCta() {
   return (
@@ -45,13 +46,16 @@ export function FooterCta() {
           Setup 30 detik. Subscription patungan pertama-mu udah jalan sebelum
           kopi siap.
         </p>
-        <Button
-          size="lg"
-          className="rounded-full px-8 text-base"
+        <a
+          href="/signup"
+          className={cn(
+            buttonVariants({ size: "lg" }),
+            "rounded-full px-8 text-base",
+          )}
           style={{ background: "var(--cream-50)", color: "var(--forest-950)" }}
         >
           Daftar sekarang →
-        </Button>
+        </a>
         <p
           style={{ marginTop: 20, fontSize: 13, color: "oklch(0.72 0.03 90)" }}
         >

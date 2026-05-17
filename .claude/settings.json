@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:api.anthropic.com)"
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(node -e \"const pkg = require\\('/Users/fachalik/Desktop/Project/aliran/node_modules/better-auth/package.json'\\); const exports = pkg.exports; const keys = Object.keys\\(exports\\).filter\\(k => k.includes\\('next'\\)\\); keys.forEach\\(k => console.log\\(k, JSON.stringify\\(exports[k]\\)\\)\\)\")",
+      "WebFetch(domain:www.hostinger.com)"
     ]
   }
 }
