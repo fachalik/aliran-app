@@ -1,7 +1,7 @@
-import { Worker, Queue } from "bullmq";
+import { Queue, Worker } from "bullmq";
 import IORedis from "ioredis";
-import { renewalScheduler } from "./jobs/renewal-scheduler";
 import { emailReminder } from "./jobs/email-reminder";
+import { renewalScheduler } from "./jobs/renewal-scheduler";
 
 const connection = new IORedis(process.env.REDIS_URL!, {
   maxRetriesPerRequest: null,
@@ -12,8 +12,12 @@ export const queues = {
   reminder: new Queue("email-reminder", { connection }),
 };
 
-const renewalWorker = new Worker("renewal-scheduler", renewalScheduler, { connection });
-const reminderWorker = new Worker("email-reminder", emailReminder, { connection });
+const renewalWorker = new Worker("renewal-scheduler", renewalScheduler, {
+  connection,
+});
+const reminderWorker = new Worker("email-reminder", emailReminder, {
+  connection,
+});
 
 renewalWorker.on("completed", (job) => {
   console.log(`[renewal] Job ${job.id} completed`);
@@ -30,14 +34,22 @@ reminderWorker.on("failed", (job, err) => {
 
 // Schedule daily cron jobs
 async function scheduleCrons() {
-  await queues.renewal.add("daily-renewal-check", {}, {
-    repeat: { pattern: "0 0 * * *" }, // daily at 00:00
-    jobId: "daily-renewal-check",
-  });
-  await queues.reminder.add("daily-reminder-check", {}, {
-    repeat: { pattern: "0 7 * * *" }, // daily at 07:00 WIB
-    jobId: "daily-reminder-check",
-  });
+  await queues.renewal.add(
+    "daily-renewal-check",
+    {},
+    {
+      repeat: { pattern: "0 0 * * *" }, // daily at 00:00
+      jobId: "daily-renewal-check",
+    },
+  );
+  await queues.reminder.add(
+    "daily-reminder-check",
+    {},
+    {
+      repeat: { pattern: "0 7 * * *" }, // daily at 07:00 WIB
+      jobId: "daily-reminder-check",
+    },
+  );
   console.log("[worker] Cron jobs scheduled");
 }
 

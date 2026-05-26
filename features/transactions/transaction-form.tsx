@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
 import { createTransaction } from "@/lib/actions/transactions";
@@ -48,7 +48,7 @@ export function TransactionForm({ userId, accounts, categories, onSuccess }: Pro
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
-    resolver: zodResolver(schema),
+    resolver: standardSchemaResolver(schema),
     defaultValues: {
       type: "expense",
       occurredAt: new Date().toISOString().slice(0, 10),

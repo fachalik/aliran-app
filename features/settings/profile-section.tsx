@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
 import { updateProfile } from "@/lib/actions/onboarding";
@@ -27,7 +27,7 @@ export function ProfileSection({ user }: Props) {
     handleSubmit,
     formState: { errors, isSubmitting, isDirty },
   } = useForm<FormData>({
-    resolver: zodResolver(schema),
+    resolver: standardSchemaResolver(schema),
     defaultValues: { name: user.name ?? "" },
   });
 

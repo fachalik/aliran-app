@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { z } from "zod";
 import { updateProfile } from "@/lib/actions/onboarding";
 import { Button } from "@/components/ui/button";
@@ -28,7 +28,7 @@ export function StepProfile({ userId, defaultName, onNext }: Props) {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
-    resolver: zodResolver(schema),
+    resolver: standardSchemaResolver(schema),
     defaultValues: { name: defaultName },
   });
 

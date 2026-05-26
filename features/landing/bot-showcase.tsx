@@ -1,5 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 const BULLETS = [
   ["Auto-broadcast", "H-3 & H-1 sebelum jatuh tempo"],
@@ -258,7 +263,12 @@ export function BotShowcase() {
         className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] items-center gap-14 md:gap-20"
         style={{ maxWidth: 1180, margin: "0 auto" }}
       >
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease }}
+        >
           <p
             style={{
               font: "500 11px/1 var(--font-mono)",
@@ -314,8 +324,16 @@ export function BotShowcase() {
               </li>
             ))}
           </ul>
-        </div>
-        <TelegramMockup />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease, delay: 0.1 }}
+        >
+          <TelegramMockup />
+        </motion.div>
       </div>
     </section>
   );

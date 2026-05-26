@@ -1,4 +1,9 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 type CalDay = {
   d: string;
@@ -90,132 +95,145 @@ export function CalendarShowcase() {
         className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] items-center gap-14 md:gap-20"
         style={{ maxWidth: 1180, margin: "0 auto" }}
       >
-        <Card
+        <motion.div
           className="order-2 md:order-1"
-          style={{
-            border: "1px solid var(--line)",
-            background: "var(--surface)",
-            boxShadow: "var(--shadow-2)",
-            maxWidth: 460,
-          }}
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease }}
         >
-          <CardContent className="p-7">
-            <div
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: 26,
-                letterSpacing: "-0.01em",
-                marginBottom: 4,
-              }}
-            >
-              November{" "}
-              <em style={{ color: "var(--forest-900)", fontStyle: "italic" }}>
-                &apos;26
-              </em>
-            </div>
-            <p
-              style={{
-                fontSize: 13,
-                color: "var(--ink-500)",
-                marginBottom: 20,
-              }}
-            >
-              3 commitment akan renewal ·{" "}
-              <strong style={{ color: "var(--forest-900)" }}>
-                net +Rp 145.000 receivable
-              </strong>
-            </p>
+          <Card
+            style={{
+              border: "1px solid var(--line)",
+              background: "var(--surface)",
+              boxShadow: "var(--shadow-2)",
+              maxWidth: 460,
+            }}
+          >
+            <CardContent className="p-7">
+              <div
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: 26,
+                  letterSpacing: "-0.01em",
+                  marginBottom: 4,
+                }}
+              >
+                November{" "}
+                <em style={{ color: "var(--forest-900)", fontStyle: "italic" }}>
+                  &apos;26
+                </em>
+              </div>
+              <p
+                style={{
+                  fontSize: 13,
+                  color: "var(--ink-500)",
+                  marginBottom: 20,
+                }}
+              >
+                3 commitment akan renewal ·{" "}
+                <strong style={{ color: "var(--forest-900)" }}>
+                  net +Rp 145.000 receivable
+                </strong>
+              </p>
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(7, 1fr)",
-                gap: 5,
-              }}
-            >
-              {["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"].map((d) => (
-                <div
-                  key={d}
-                  style={{
-                    font: "500 10px/1 var(--font-mono)",
-                    color: "var(--ink-500)",
-                    textAlign: "center",
-                    padding: "4px 0",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {d[0]}
-                </div>
-              ))}
-              {DAYS.map((day) => {
-                const dayKey = `${day.d}-${day.m ? "p" : day.today ? "t" : "c"}`;
-                return (
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(7, 1fr)",
+                  gap: 5,
+                }}
+              >
+                {["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"].map((d) => (
                   <div
-                    key={dayKey}
+                    key={d}
                     style={{
-                      aspectRatio: "1",
-                      borderRadius: 8,
-                      padding: 6,
-                      fontSize: 11.5,
-                      display: "flex",
-                      flexDirection: "column",
-                      border: `1px solid ${day.recv ? "oklch(0.85 0.07 80)" : day.sched ? "oklch(0.85 0.05 260)" : "transparent"}`,
-                      background: day.today
-                        ? "var(--forest-900)"
-                        : day.recv
-                          ? "var(--amber-200)"
-                          : day.sched
-                            ? "var(--indigo-200)"
-                            : "transparent",
-                      color: day.m
-                        ? "var(--ink-300)"
-                        : day.today
-                          ? "var(--cream-50)"
-                          : "var(--ink-700)",
-                      fontWeight: day.today ? 500 : "normal",
+                      font: "500 10px/1 var(--font-mono)",
+                      color: "var(--ink-500)",
+                      textAlign: "center",
+                      padding: "4px 0",
+                      textTransform: "uppercase",
                     }}
                   >
-                    {day.d}
-                    {day.dots && (
-                      <div
-                        style={{ marginTop: "auto", display: "flex", gap: 2 }}
-                      >
-                        {day.dots
-                          .reduce<{ key: string; dot: string }[]>(
-                            (acc, dot) => {
-                              const count = acc.filter(
-                                (x) => x.dot === dot,
-                              ).length;
-                              return acc.concat({
-                                key: `${day.d}-${dot}-${count}`,
-                                dot,
-                              });
-                            },
-                            [],
-                          )
-                          .map(({ key, dot }) => (
-                            <i
-                              key={key}
-                              style={{
-                                width: 4.5,
-                                height: 4.5,
-                                borderRadius: "50%",
-                                display: "block",
-                                background: DOT_COLOR[dot],
-                                opacity: dot === "white" ? 0.7 : 1,
-                              }}
-                            />
-                          ))}
-                      </div>
-                    )}
+                    {d[0]}
                   </div>
-                );
-              })}
-            </div>
-          </CardContent>
-        </Card>
+                ))}
+                {DAYS.map((day) => {
+                  const dayKey = `${day.d}-${day.m ? "p" : day.today ? "t" : "c"}`;
+                  return (
+                    <div
+                      key={dayKey}
+                      style={{
+                        aspectRatio: "1",
+                        borderRadius: 8,
+                        padding: 6,
+                        fontSize: 11.5,
+                        display: "flex",
+                        flexDirection: "column",
+                        border: `1px solid ${day.recv ? "oklch(0.85 0.07 80)" : day.sched ? "oklch(0.85 0.05 260)" : "transparent"}`,
+                        background: day.today
+                          ? "var(--forest-900)"
+                          : day.recv
+                            ? "var(--amber-200)"
+                            : day.sched
+                              ? "var(--indigo-200)"
+                              : "transparent",
+                        color: day.m
+                          ? "var(--ink-300)"
+                          : day.today
+                            ? "var(--cream-50)"
+                            : "var(--ink-700)",
+                        fontWeight: day.today ? 500 : "normal",
+                      }}
+                    >
+                      {day.d}
+                      {day.dots && (
+                        <div
+                          style={{ marginTop: "auto", display: "flex", gap: 2 }}
+                        >
+                          {day.dots
+                            .reduce<{ key: string; dot: string }[]>(
+                              (acc, dot) => {
+                                const count = acc.filter(
+                                  (x) => x.dot === dot,
+                                ).length;
+                                return acc.concat({
+                                  key: `${day.d}-${dot}-${count}`,
+                                  dot,
+                                });
+                              },
+                              [],
+                            )
+                            .map(({ key, dot }) => (
+                              <i
+                                key={key}
+                                style={{
+                                  width: 4.5,
+                                  height: 4.5,
+                                  borderRadius: "50%",
+                                  display: "block",
+                                  background: DOT_COLOR[dot],
+                                  opacity: dot === "white" ? 0.7 : 1,
+                                }}
+                              />
+                            ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
 
-        <div className="order-1 md:order-2">
+        <motion.div
+          className="order-1 md:order-2"
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease, delay: 0.1 }}
+        >
           <p
             style={{
               font: "500 11px/1 var(--font-mono)",
@@ -270,7 +288,7 @@ export function CalendarShowcase() {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

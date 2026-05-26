@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { z } from "zod";
 import { createFinancialAccount } from "@/lib/actions/accounts";
 import { Button } from "@/components/ui/button";
@@ -42,7 +42,7 @@ export function StepFirstAccount({ userId, onNext }: Props) {
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
-    resolver: zodResolver(schema),
+    resolver: standardSchemaResolver(schema),
     defaultValues: { type: "bank", balance: 0 },
   });
 

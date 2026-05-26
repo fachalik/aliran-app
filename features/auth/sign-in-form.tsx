@@ -1,22 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { signIn } from "@/lib/auth-client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 const schema = z.object({
   email: z.email("Format email tidak valid"),
@@ -24,6 +16,27 @@ const schema = z.object({
 });
 
 type FormData = z.infer<typeof schema>;
+
+const PREVIEW_ROWS = [
+  {
+    name: "Netflix Premium",
+    amount: "Rp 46.500/orang",
+    status: "Lunas",
+    statusColor: "oklch(0.68 0.10 155)",
+  },
+  {
+    name: "Spotify Family",
+    amount: "Rp 13.200/orang",
+    status: "Aktif",
+    statusColor: "oklch(0.76 0.09 90)",
+  },
+  {
+    name: "iCloud+",
+    amount: "Rp 33.000/orang",
+    status: "Jatuh tempo",
+    statusColor: "oklch(0.74 0.10 35)",
+  },
+];
 
 export function SignInForm() {
   const router = useRouter();
@@ -35,7 +48,7 @@ export function SignInForm() {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<FormData>({ resolver: zodResolver(schema) });
+  } = useForm<FormData>({ resolver: standardSchemaResolver(schema) });
 
   async function onSubmit(data: FormData) {
     setError(null);
@@ -54,71 +67,388 @@ export function SignInForm() {
   }
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Masuk</CardTitle>
-        <CardDescription>Masuk ke akun Aliran kamu</CardDescription>
-      </CardHeader>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <CardContent className="space-y-4">
-          {error && (
-            <p className="text-sm p-3 rounded-md bg-red-50 text-red-600 border border-red-200">
-              {error}
-            </p>
-          )}
-          <div className="space-y-1.5">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="kamu@email.com"
-              {...register("email")}
-            />
-            {errors.email && (
-              <p className="text-xs text-red-500">{errors.email.message}</p>
-            )}
-          </div>
-          <div className="space-y-1.5">
-            <div className="flex items-center justify-between">
-              <Label htmlFor="password">Password</Label>
-              <a
-                href="/forgot-password"
-                className="text-xs"
-                style={{ color: "var(--forest-700)" }}
-              >
-                Lupa password?
-              </a>
-            </div>
-            <Input
-              id="password"
-              type="password"
-              placeholder="••••••••"
-              {...register("password")}
-            />
-            {errors.password && (
-              <p className="text-xs text-red-500">{errors.password.message}</p>
-            )}
-          </div>
-        </CardContent>
-        <CardFooter className="flex flex-col gap-3">
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
-            {isSubmitting ? "Masuk..." : "Masuk"}
-          </Button>
-          <p
-            className="text-sm text-center"
-            style={{ color: "var(--ink-500)" }}
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 50,
+        display: "flex",
+        overflowY: "auto",
+        background: "var(--cream-100)",
+      }}
+    >
+      {/* Left panel */}
+      <div
+        className="hidden md:flex"
+        style={{
+          width: "42%",
+          minWidth: 300,
+          flexShrink: 0,
+          background: "var(--forest-950)",
+          padding: "44px 48px",
+          flexDirection: "column",
+          position: "sticky",
+          top: 0,
+          height: "100vh",
+          overflowY: "auto",
+        }}
+      >
+        <a
+          href="/"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 9,
+            textDecoration: "none",
+          }}
+        >
+          <span
+            style={{
+              width: 26,
+              height: 26,
+              borderRadius: 7,
+              background: "oklch(0.30 0.04 155)",
+              color: "oklch(0.88 0.03 90)",
+              display: "grid",
+              placeItems: "center",
+              fontFamily: "var(--font-display)",
+              fontStyle: "italic",
+              fontSize: 17,
+            }}
           >
-            Belum punya akun?{" "}
-            <a
-              href="/signup"
-              style={{ color: "var(--forest-700)" }}
-              className="font-medium"
-            >
-              Daftar gratis
-            </a>
+            a
+          </span>
+          <span
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: 17,
+              fontWeight: 400,
+              color: "oklch(0.86 0.03 90)",
+              letterSpacing: "-0.015em",
+            }}
+          >
+            Aliran
+          </span>
+        </a>
+
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            paddingTop: 48,
+            paddingBottom: 48,
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              fontWeight: 400,
+              fontSize: "clamp(26px, 2.6vw, 36px)",
+              lineHeight: 1.1,
+              letterSpacing: "-0.025em",
+              color: "oklch(0.90 0.03 90)",
+              margin: "0 0 14px",
+            }}
+          >
+            Selamat datang{" "}
+            <em style={{ fontStyle: "italic", color: "oklch(0.68 0.10 155)" }}>
+              kembali.
+            </em>
+          </h2>
+          <p
+            style={{
+              fontSize: 13.5,
+              color: "oklch(0.58 0.018 90)",
+              lineHeight: 1.6,
+              margin: "0 0 36px",
+            }}
+          >
+            Pantau semua langganan patungan dan tagihan dari satu dashboard.
           </p>
-        </CardFooter>
-      </form>
-    </Card>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            {PREVIEW_ROWS.map((row) => (
+              <div
+                key={row.name}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  padding: "13px 16px",
+                  borderRadius: 9,
+                  background: "oklch(0.16 0.022 160)",
+                }}
+              >
+                <div>
+                  <div
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 500,
+                      color: "oklch(0.86 0.03 90)",
+                      marginBottom: 2,
+                    }}
+                  >
+                    {row.name}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 10.5,
+                      color: "oklch(0.50 0.014 90)",
+                    }}
+                  >
+                    {row.amount}
+                  </div>
+                </div>
+                <div
+                  style={{
+                    fontSize: 10.5,
+                    fontWeight: 500,
+                    color: row.statusColor,
+                    fontFamily: "var(--font-mono)",
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  {row.status}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <p style={{ fontSize: 12, color: "white" }}>
+          Belum punya akun?{" "}
+          <a
+            href="/signup"
+            style={{
+              color: "oklch(0.62 0.08 155)",
+              fontWeight: 500,
+              textDecoration: "none",
+            }}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.textDecoration = "underline")
+            }
+            onMouseOut={(e) => (e.currentTarget.style.textDecoration = "none")}
+            onFocus={(e) =>
+              (e.currentTarget.style.textDecoration = "underline")
+            }
+            onBlur={(e) => (e.currentTarget.style.textDecoration = "none")}
+          >
+            Daftar gratis
+          </a>
+        </p>
+      </div>
+
+      {/* Right panel */}
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "48px 24px",
+          minHeight: "100vh",
+          background: "var(--cream-100)",
+        }}
+      >
+        <div style={{ width: "100%", maxWidth: 380 }}>
+          {/* Mobile logo */}
+          <div
+            className="md:hidden"
+            style={{ textAlign: "center", marginBottom: 40 }}
+          >
+            <a href="/" style={{ textDecoration: "none" }}>
+              <span
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: 26,
+                  fontWeight: 400,
+                  color: "var(--forest-800)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Aliran
+              </span>
+            </a>
+          </div>
+
+          <h1
+            style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: 22,
+              fontWeight: 600,
+              color: "var(--ink-900)",
+              letterSpacing: "-0.01em",
+              margin: "0 0 6px",
+            }}
+          >
+            Masuk
+          </h1>
+          <p
+            style={{
+              fontSize: 13,
+              color: "var(--ink-400)",
+              margin: "0 0 28px",
+            }}
+          >
+            Masukkan email dan password akunmu
+          </p>
+
+          <form onSubmit={handleSubmit(onSubmit)} noValidate>
+            {error && (
+              <div
+                role="alert"
+                style={{
+                  padding: "10px 14px",
+                  borderRadius: "var(--r-sm)",
+                  background: "var(--clay-200)",
+                  border: "1px solid oklch(0.65 0.14 35 / 0.4)",
+                  color: "var(--clay-600)",
+                  fontSize: 13,
+                  lineHeight: 1.45,
+                  marginBottom: 20,
+                }}
+              >
+                {error}
+              </div>
+            )}
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              <div>
+                <Label
+                  htmlFor="email"
+                  style={{
+                    display: "block",
+                    fontSize: 13,
+                    fontWeight: 500,
+                    color: "var(--ink-700)",
+                    marginBottom: 6,
+                  }}
+                >
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="kamu@email.com"
+                  autoComplete="email"
+                  aria-invalid={!!errors.email}
+                  aria-describedby={errors.email ? "email-error" : undefined}
+                  {...register("email")}
+                />
+                {errors.email && (
+                  <p
+                    id="email-error"
+                    style={{
+                      fontSize: 12,
+                      color: "var(--clay-600)",
+                      marginTop: 5,
+                    }}
+                  >
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "baseline",
+                    marginBottom: 6,
+                  }}
+                >
+                  <Label
+                    htmlFor="password"
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 500,
+                      color: "var(--ink-700)",
+                    }}
+                  >
+                    Password
+                  </Label>
+                  <a
+                    href="/forgot-password"
+                    style={{
+                      fontSize: 12,
+                      color: "var(--ink-400)",
+                      textDecoration: "none",
+                    }}
+                    onMouseOver={(e) =>
+                      (e.currentTarget.style.color = "var(--ink-700)")
+                    }
+                    onMouseOut={(e) =>
+                      (e.currentTarget.style.color = "var(--ink-400)")
+                    }
+                    onFocus={(e) =>
+                      (e.currentTarget.style.color = "var(--ink-700)")
+                    }
+                    onBlur={(e) =>
+                      (e.currentTarget.style.color = "var(--ink-400)")
+                    }
+                  >
+                    Lupa password?
+                  </a>
+                </div>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="••••••••"
+                  autoComplete="current-password"
+                  aria-invalid={!!errors.password}
+                  aria-describedby={
+                    errors.password ? "password-error" : undefined
+                  }
+                  {...register("password")}
+                />
+                {errors.password && (
+                  <p
+                    id="password-error"
+                    style={{
+                      fontSize: 12,
+                      color: "var(--clay-600)",
+                      marginTop: 5,
+                    }}
+                  >
+                    {errors.password.message}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full"
+              style={{ marginTop: 28 }}
+            >
+              {isSubmitting ? "Masuk..." : "Masuk"}
+            </Button>
+
+            <p
+              className="md:hidden"
+              style={{
+                fontSize: 13,
+                color: "var(--ink-400)",
+                textAlign: "center",
+                marginTop: 20,
+              }}
+            >
+              Belum punya akun?{" "}
+              <a
+                href="/signup"
+                style={{ color: "var(--forest-700)", fontWeight: 500 }}
+              >
+                Daftar gratis
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
