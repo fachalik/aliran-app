@@ -51,19 +51,10 @@ export function ResetPasswordForm() {
 
   return (
     <div>
-      <h1
-        style={{
-          fontFamily: "var(--font-sans)",
-          fontSize: 22,
-          fontWeight: 600,
-          color: "var(--ink-900)",
-          letterSpacing: "-0.01em",
-          margin: "0 0 6px",
-        }}
-      >
+      <h1 className="font-sans text-[22px] font-semibold text-ink-900 tracking-[-0.01em] mt-0 mb-1.5">
         Password baru
       </h1>
-      <p style={{ fontSize: 13, color: "var(--ink-400)", margin: "0 0 28px" }}>
+      <p className="text-[13px] text-ink-400 mt-0 mb-7">
         Buat password baru untuk akunmu
       </p>
 
@@ -71,32 +62,23 @@ export function ResetPasswordForm() {
         {error && (
           <div
             role="alert"
-            style={{
-              padding: "10px 14px",
-              borderRadius: "var(--r-sm)",
-              background: "var(--clay-200)",
-              border: "1px solid oklch(0.65 0.14 35 / 0.4)",
-              color: "var(--clay-600)",
-              fontSize: 13,
-              lineHeight: 1.45,
-              marginBottom: 20,
-            }}
+            className="px-3.5 py-2.5 rounded-(--r-sm) bg-clay-200 border border-[oklch(0.65_0.14_35/0.4)] text-clay-600 text-[13px] leading-[1.45] mb-5"
           >
             {error}{" "}
             <a
               href="/forgot-password"
-              style={{ color: "var(--clay-600)", fontWeight: 500 }}
+              className="text-clay-600 font-medium"
             >
               Minta tautan baru
             </a>
           </div>
         )}
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+        <div className="flex flex-col gap-5">
           <div>
             <Label
               htmlFor="password"
-              style={{ display: "block", fontSize: 13, fontWeight: 500, color: "var(--ink-700)", marginBottom: 6 }}
+              className="block text-[13px] font-medium text-ink-700 mb-1.5"
             >
               Password baru
             </Label>
@@ -110,7 +92,7 @@ export function ResetPasswordForm() {
               {...register("password")}
             />
             {errors.password && (
-              <p id="password-error" style={{ fontSize: 12, color: "var(--clay-600)", marginTop: 5 }}>
+              <p id="password-error" className="text-xs text-clay-600 mt-1.25">
                 {errors.password.message}
               </p>
             )}
@@ -119,7 +101,7 @@ export function ResetPasswordForm() {
           <div>
             <Label
               htmlFor="confirmPassword"
-              style={{ display: "block", fontSize: 13, fontWeight: 500, color: "var(--ink-700)", marginBottom: 6 }}
+              className="block text-[13px] font-medium text-ink-700 mb-1.5"
             >
               Konfirmasi password
             </Label>
@@ -133,7 +115,7 @@ export function ResetPasswordForm() {
               {...register("confirmPassword")}
             />
             {errors.confirmPassword && (
-              <p id="confirm-error" style={{ fontSize: 12, color: "var(--clay-600)", marginTop: 5 }}>
+              <p id="confirm-error" className="text-xs text-clay-600 mt-1.25">
                 {errors.confirmPassword.message}
               </p>
             )}
@@ -143,8 +125,7 @@ export function ResetPasswordForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full"
-          style={{ marginTop: 28 }}
+          className="w-full mt-7"
         >
           {isSubmitting ? "Menyimpan..." : "Simpan password baru"}
         </Button>
