@@ -1,13 +1,24 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import Link from "next/link";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export function Nav() {
   return (
-    <div className="sticky top-4 z-50 flex justify-center px-4">
+    <motion.div
+      className="sticky top-4 z-50 flex justify-center px-4"
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease }}
+    >
       <nav
-        className="flex items-center gap-1 rounded-full px-3 py-1.5"
+        className="flex items-center gap-1 rounded-full px-3 py-1.5 backdrop-blur-md"
         style={{
-          background: "var(--surface)",
+          background: "color-mix(in oklch, var(--cream-50) 85%, transparent)",
           border: "1px solid var(--line)",
           boxShadow: "var(--shadow-2)",
           paddingLeft: 18,
@@ -46,12 +57,12 @@ export function Nav() {
           {[
             ["#features", "Fitur"],
             ["#how", "Cara kerja"],
-            ["#faq", "FAQ"],
+            // ["#faq", "FAQ"],
           ].map(([href, label]) => (
             <a
               key={href}
               href={href}
-              className="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:bg-(--cream-200)"
+              className="rounded-full px-3.5 py-2 text-sm no-underline transition-colors hover:bg-cream-200"
               style={{ color: "var(--ink-700)" }}
             >
               {label}
@@ -59,10 +70,16 @@ export function Nav() {
           ))}
         </div>
 
-        <Button size="sm" className="ml-2 rounded-full px-5">
+        <a
+          href="/signup"
+          className={cn(
+            buttonVariants({ size: "sm" }),
+            "ml-2 rounded-full px-5",
+          )}
+        >
           Coba gratis
-        </Button>
+        </a>
       </nav>
-    </div>
+    </motion.div>
   );
 }

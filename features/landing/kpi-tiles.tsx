@@ -1,4 +1,9 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 const TILES = [
   {
@@ -46,44 +51,52 @@ export function KpiTiles() {
         className="grid grid-cols-1 sm:grid-cols-3 gap-4"
         style={{ maxWidth: 980, margin: "0 auto" }}
       >
-        {TILES.map((tile) => (
-          <Card
+        {TILES.map((tile, i) => (
+          <motion.div
             key={tile.variant}
-            className="border-0"
-            style={{
-              aspectRatio: "1 / 1",
-              borderRadius: "var(--r-xl)",
-              background: tile.bg,
-              color: tile.color,
-            }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.64, ease, delay: i * 0.12 }}
+            whileHover={{ y: -5, transition: { duration: 0.2, ease } }}
           >
-            <CardContent className="flex h-full flex-col justify-between p-7">
-              <div
-                style={{
-                  font: "500 11px/1.3 var(--font-mono)",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  opacity: 0.7,
-                }}
-              >
-                {tile.label}
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 400,
-                  fontSize: "clamp(38px, 4vw, 56px)",
-                  lineHeight: 1,
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                {tile.value}
-              </div>
-              <div style={{ fontSize: 13, lineHeight: 1.5, opacity: 0.75 }}>
-                {tile.desc}
-              </div>
-            </CardContent>
-          </Card>
+            <Card
+              className="border-0"
+              style={{
+                aspectRatio: "1 / 1",
+                borderRadius: "var(--r-xl)",
+                background: tile.bg,
+                color: tile.color,
+              }}
+            >
+              <CardContent className="flex h-full flex-col justify-between p-7">
+                <div
+                  style={{
+                    font: "500 11px/1.3 var(--font-mono)",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    opacity: 0.7,
+                  }}
+                >
+                  {tile.label}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 400,
+                    fontSize: "clamp(38px, 4vw, 56px)",
+                    lineHeight: 1,
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  {tile.value}
+                </div>
+                <div style={{ fontSize: 13, lineHeight: 1.5, opacity: 0.75 }}>
+                  {tile.desc}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         ))}
       </div>
     </section>

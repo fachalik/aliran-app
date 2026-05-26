@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "title": "Design System: Aliran",
+  "extensions": {
+    "colorMeta": {
+      "forest-950": { "role": "primary", "displayName": "Canopy Deep", "canonical": "oklch(0.22 0.04 155)", "tonalRamp": ["oklch(0.12 0.02 155)", "oklch(0.22 0.04 155)", "oklch(0.28 0.05 155)", "oklch(0.34 0.06 155)", "oklch(0.42 0.07 155)", "oklch(0.60 0.06 155)", "oklch(0.88 0.04 155)", "oklch(0.94 0.025 155)"] },
+      "forest-900": { "role": "primary", "displayName": "Shaded Canopy", "canonical": "oklch(0.28 0.05 155)", "tonalRamp": ["oklch(0.12 0.02 155)", "oklch(0.22 0.04 155)", "oklch(0.28 0.05 155)", "oklch(0.34 0.06 155)", "oklch(0.42 0.07 155)", "oklch(0.60 0.06 155)", "oklch(0.88 0.04 155)", "oklch(0.94 0.025 155)"] },
+      "forest-700": { "role": "primary", "displayName": "Forest Mid", "canonical": "oklch(0.42 0.07 155)", "tonalRamp": ["oklch(0.12 0.02 155)", "oklch(0.22 0.04 155)", "oklch(0.28 0.05 155)", "oklch(0.34 0.06 155)", "oklch(0.42 0.07 155)", "oklch(0.60 0.06 155)", "oklch(0.88 0.04 155)", "oklch(0.94 0.025 155)"] },
+      "forest-200": { "role": "primary", "displayName": "Canopy Veil", "canonical": "oklch(0.88 0.04 155)", "tonalRamp": ["oklch(0.12 0.02 155)", "oklch(0.22 0.04 155)", "oklch(0.28 0.05 155)", "oklch(0.34 0.06 155)", "oklch(0.42 0.07 155)", "oklch(0.60 0.06 155)", "oklch(0.88 0.04 155)", "oklch(0.94 0.025 155)"] },
+      "forest-100": { "role": "primary", "displayName": "Canopy Mist", "canonical": "oklch(0.94 0.025 155)", "tonalRamp": ["oklch(0.12 0.02 155)", "oklch(0.22 0.04 155)", "oklch(0.28 0.05 155)", "oklch(0.34 0.06 155)", "oklch(0.42 0.07 155)", "oklch(0.60 0.06 155)", "oklch(0.88 0.04 155)", "oklch(0.94 0.025 155)"] },
+      "cream-50": { "role": "neutral", "displayName": "Warm Parchment", "canonical": "oklch(0.985 0.008 85)", "tonalRamp": ["oklch(0.40 0.02 85)", "oklch(0.55 0.02 85)", "oklch(0.70 0.018 85)", "oklch(0.80 0.016 82)", "oklch(0.86 0.022 78)", "oklch(0.91 0.018 80)", "oklch(0.945 0.014 82)", "oklch(0.985 0.008 85)"] },
+      "cream-100": { "role": "neutral", "displayName": "Page Ground", "canonical": "oklch(0.97 0.012 85)", "tonalRamp": ["oklch(0.40 0.02 85)", "oklch(0.55 0.02 85)", "oklch(0.70 0.018 85)", "oklch(0.80 0.016 82)", "oklch(0.86 0.022 78)", "oklch(0.91 0.018 80)", "oklch(0.945 0.014 82)", "oklch(0.985 0.008 85)"] },
+      "line": { "role": "neutral", "displayName": "Ruled Line", "canonical": "oklch(0.89 0.015 80)", "tonalRamp": ["oklch(0.40 0.02 85)", "oklch(0.55 0.02 85)", "oklch(0.70 0.018 85)", "oklch(0.80 0.016 82)", "oklch(0.86 0.022 78)", "oklch(0.91 0.018 80)", "oklch(0.945 0.014 82)", "oklch(0.985 0.008 85)"] },
+      "ink-900": { "role": "neutral", "displayName": "Ink Deep", "canonical": "oklch(0.18 0.012 60)", "tonalRamp": ["oklch(0.18 0.012 60)", "oklch(0.32 0.012 60)", "oklch(0.50 0.012 60)", "oklch(0.62 0.010 60)", "oklch(0.75 0.010 70)", "oklch(0.85 0.008 70)", "oklch(0.92 0.006 75)", "oklch(0.97 0.005 80)"] },
+      "ink-500": { "role": "neutral", "displayName": "Ink Faded", "canonical": "oklch(0.50 0.012 60)", "tonalRamp": ["oklch(0.18 0.012 60)", "oklch(0.32 0.012 60)", "oklch(0.50 0.012 60)", "oklch(0.62 0.010 60)", "oklch(0.75 0.010 70)", "oklch(0.85 0.008 70)", "oklch(0.92 0.006 75)", "oklch(0.97 0.005 80)"] },
+      "amber-600": { "role": "tertiary", "displayName": "Warm Amber", "canonical": "oklch(0.70 0.14 75)", "tonalRamp": ["oklch(0.30 0.10 75)", "oklch(0.40 0.12 75)", "oklch(0.50 0.13 75)", "oklch(0.60 0.14 75)", "oklch(0.70 0.14 75)", "oklch(0.80 0.10 78)", "oklch(0.92 0.06 80)", "oklch(0.97 0.03 82)"] },
+      "clay-600": { "role": "tertiary", "displayName": "Terracotta Ledger", "canonical": "oklch(0.65 0.14 35)", "tonalRamp": ["oklch(0.25 0.10 35)", "oklch(0.35 0.12 35)", "oklch(0.45 0.13 35)", "oklch(0.55 0.14 35)", "oklch(0.65 0.14 35)", "oklch(0.75 0.10 38)", "oklch(0.92 0.05 40)", "oklch(0.97 0.02 42)"] },
+      "indigo-600": { "role": "secondary", "displayName": "Deep Register", "canonical": "oklch(0.55 0.14 260)", "tonalRamp": ["oklch(0.25 0.10 260)", "oklch(0.35 0.12 260)", "oklch(0.45 0.13 260)", "oklch(0.55 0.14 260)", "oklch(0.65 0.12 260)", "oklch(0.75 0.08 260)", "oklch(0.92 0.04 260)", "oklch(0.97 0.02 260)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines, service names in commitment cards, sidebar logo, currency amounts in feature cards. Never in operational UI." },
+      "body": { "displayName": "Body", "purpose": "All operational UI text: navigation, buttons, form labels, descriptions, card titles. Maximum 65ch for prose." },
+      "label": { "displayName": "Label / Mono", "purpose": "Status badges, codes, identifiers, timestamps, table column headers, financial metadata. Always uppercase at smallest sizes." }
+    },
+    "shadows": [
+      { "name": "whisper", "value": "0 1px 0 oklch(0.18 0.012 60 / 0.04), 0 1px 2px oklch(0.18 0.012 60 / 0.04)", "purpose": "Resting state of interactive controls (buttons, chips). Signals affordance without distraction." },
+      { "name": "structural", "value": "0 1px 0 oklch(0.18 0.012 60 / 0.04), 0 8px 24px -8px oklch(0.18 0.012 60 / 0.12)", "purpose": "Hover state on controls, dropdowns at rest, focus panels." },
+      { "name": "prominent", "value": "0 1px 0 oklch(0.18 0.012 60 / 0.04), 0 24px 60px -20px oklch(0.18 0.012 60 / 0.18)", "purpose": "Modals, popovers, command palettes." },
+      { "name": "card-deep", "value": "0 24px 60px -16px oklch(0.18 0.012 60 / 0.32), 0 0 0 1px oklch(0.18 0.012 60 / 0.06)", "purpose": "Commitment cards — floating physical card metaphor only." }
+    ],
+    "motion": [
+      { "name": "standard", "value": "150ms ease-out", "purpose": "Default for state transitions: color, background, shadow, opacity." },
+      { "name": "reveal", "value": "200ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Panel reveals, dropdown entrances. Ease-out-expo." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px", "purpose": "Sidebar visibility threshold. Below md: sidebar hidden." },
+      { "name": "lg", "value": "1024px", "purpose": "Dashboard grid shifts from 1 to 2 columns." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single primary action on a surface. Forest green, confident weight.",
+      "html": "<button class=\"ds-btn-primary\">Tambah Transaksi</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; height: 32px; padding: 0 10px; gap: 6px; background: oklch(0.28 0.05 155); color: oklch(0.985 0.008 85); border-radius: 18px; border: 1px solid transparent; font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 500; white-space: nowrap; cursor: pointer; box-shadow: 0 1px 0 oklch(0.18 0.012 60 / 0.04), 0 1px 2px oklch(0.18 0.012 60 / 0.04); transition: background 150ms ease-out, box-shadow 150ms ease-out, transform 150ms ease-out; } .ds-btn-primary:hover { background: oklch(0.22 0.04 155); } .ds-btn-primary:focus-visible { outline: none; border-color: oklch(0.28 0.05 155); box-shadow: 0 0 0 3px oklch(0.28 0.05 155 / 0.5); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:disabled { opacity: 0.5; pointer-events: none; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action. Parchment background, bordered.",
+      "html": "<button class=\"ds-btn-outline\">Batal</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; height: 32px; padding: 0 10px; gap: 6px; background: oklch(0.97 0.012 85); color: oklch(0.18 0.012 60); border-radius: 18px; border: 1px solid oklch(0.89 0.015 80); font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 500; white-space: nowrap; cursor: pointer; transition: background 150ms ease-out, border-color 150ms ease-out; } .ds-btn-outline:hover { background: oklch(0.945 0.014 82); } .ds-btn-outline:focus-visible { outline: none; border-color: oklch(0.28 0.05 155); box-shadow: 0 0 0 3px oklch(0.28 0.05 155 / 0.5); } .ds-btn-outline:disabled { opacity: 0.5; pointer-events: none; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Tertiary / navigation action. Invisible at rest.",
+      "html": "<button class=\"ds-btn-ghost\">Lihat semua</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; height: 32px; padding: 0 10px; gap: 6px; background: transparent; color: oklch(0.32 0.012 60); border-radius: 18px; border: 1px solid transparent; font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 500; white-space: nowrap; cursor: pointer; transition: background 150ms ease-out, color 150ms ease-out; } .ds-btn-ghost:hover { background: oklch(0.945 0.014 82); color: oklch(0.18 0.012 60); } .ds-btn-ghost:focus-visible { outline: none; border-color: oklch(0.28 0.05 155); box-shadow: 0 0 0 3px oklch(0.28 0.05 155 / 0.5); } .ds-btn-ghost:disabled { opacity: 0.5; pointer-events: none; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Standard form field. Transparent, ruled-line border, tight radius.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Nama transaksi\" />",
+      "css": ".ds-input { display: block; width: 100%; height: 32px; padding: 0 10px; background: transparent; border: 1px solid oklch(0.89 0.015 80); border-radius: 8px; font-family: 'Inter', system-ui, sans-serif; font-size: 14px; color: oklch(0.18 0.012 60); transition: border-color 150ms ease-out, box-shadow 150ms ease-out; outline: none; } .ds-input::placeholder { color: oklch(0.50 0.012 60); } .ds-input:focus-visible { border-color: oklch(0.28 0.05 155); box-shadow: 0 0 0 3px oklch(0.28 0.05 155 / 0.5); } .ds-input:disabled { background: oklch(0.89 0.015 80 / 0.5); opacity: 0.5; cursor: not-allowed; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Content container. Warm parchment, hairline ring, flat (no shadow).",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-title\">Saldo Total</div><div class=\"ds-card-description\">Semua rekening</div><div style=\"font-size: 22px; font-weight: 700; color: oklch(0.18 0.012 60); margin-top: 8px; font-variant-numeric: tabular-nums;\">Rp 4.250.000</div></div>",
+      "css": ".ds-card { display: flex; flex-direction: column; gap: 8px; background: oklch(0.985 0.008 85); border-radius: 18px; padding: 16px; box-shadow: 0 0 0 1px oklch(0.18 0.012 60 / 0.1); font-family: 'Inter', system-ui, sans-serif; font-size: 14px; color: oklch(0.18 0.012 60); overflow: hidden; } .ds-card-title { font-size: 15px; font-weight: 500; line-height: 1.3; color: oklch(0.18 0.012 60); } .ds-card-description { font-size: 13px; color: oklch(0.50 0.012 60); }"
+    },
+    {
+      "name": "Nav Item (Active)",
+      "kind": "nav",
+      "refersTo": "button-ghost",
+      "description": "Sidebar navigation link. Tonal shift for active state — no border or underline.",
+      "html": "<a class=\"ds-nav-item ds-nav-active\" href=\"#\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"7\" height=\"9\" x=\"3\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"5\" x=\"14\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"9\" x=\"14\" y=\"12\" rx=\"1\"/><rect width=\"7\" height=\"5\" x=\"3\" y=\"16\" rx=\"1\"/></svg>Dashboard</a>",
+      "css": ".ds-nav-item { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 8px; font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 500; color: oklch(0.50 0.012 60); background: transparent; text-decoration: none; transition: background 150ms ease-out, color 150ms ease-out; } .ds-nav-item:hover { background: oklch(0.945 0.014 82); color: oklch(0.18 0.012 60); } .ds-nav-active { background: oklch(0.94 0.025 155); color: oklch(0.34 0.06 155); }"
+    },
+    {
+      "name": "Transaction Row",
+      "kind": "custom",
+      "description": "Signature data row for the transactions list. Mono metadata, tabular amounts, semantic income/expense color.",
+      "html": "<div class=\"ds-tx-row\"><div class=\"ds-tx-left\"><div class=\"ds-tx-name\">Gojek</div><div class=\"ds-tx-meta\">21 Mei 2026 · Operasional</div></div><div class=\"ds-tx-amount ds-tx-out\">- Rp 45.000</div></div>",
+      "css": ".ds-tx-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid oklch(0.89 0.015 80); font-family: 'Inter', system-ui, sans-serif; } .ds-tx-row:last-child { border-bottom: none; } .ds-tx-left { display: flex; flex-direction: column; gap: 2px; } .ds-tx-name { font-size: 14px; font-weight: 500; color: oklch(0.18 0.012 60); } .ds-tx-meta { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.50 0.012 60); letter-spacing: 0.04em; } .ds-tx-amount { font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; font-feature-settings: 'tnum'; } .ds-tx-in { color: oklch(0.42 0.07 155); } .ds-tx-out { color: oklch(0.65 0.14 35); }"
+    },
+    {
+      "name": "Commitment Card",
+      "kind": "card",
+      "description": "Signature physical-card widget. Top accent bar, mono identifiers, serif name and amount.",
+      "html": "<div class=\"ds-commitment-card\"><div class=\"ds-commitment-bar\" style=\"background: oklch(0.42 0.07 155);\"></div><div class=\"ds-commitment-header\"><span class=\"ds-commitment-label\">Tagihan</span><span class=\"ds-commitment-label\">#NOV-013</span></div><div class=\"ds-commitment-name\">Netflix Premium</div><div class=\"ds-commitment-period\">Nov 2026 · 4 anggota</div><div class=\"ds-commitment-footer\"><span class=\"ds-commitment-label\" style=\"color: oklch(0.50 0.012 60);\">Per orang</span><span class=\"ds-commitment-amount\">Rp 46.500</span></div></div>",
+      "css": ".ds-commitment-card { position: relative; width: 200px; background: oklch(0.985 0.008 85); border-radius: 6px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 0; box-shadow: 0 24px 60px -16px oklch(0.18 0.012 60 / 0.32), 0 0 0 1px oklch(0.18 0.012 60 / 0.06); overflow: hidden; font-family: 'Inter', system-ui, sans-serif; } .ds-commitment-bar { position: absolute; top: 0; left: 0; right: 0; height: 6px; } .ds-commitment-header { display: flex; justify-content: space-between; margin-top: 8px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed oklch(0.86 0.022 78); } .ds-commitment-label { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 9.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: oklch(0.50 0.012 60); } .ds-commitment-name { font-family: 'Instrument Serif', 'Times New Roman', serif; font-size: 20px; line-height: 1.05; color: oklch(0.18 0.012 60); margin-bottom: 6px; } .ds-commitment-period { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10.5px; color: oklch(0.50 0.012 60); margin-bottom: 12px; } .ds-commitment-footer { display: flex; justify-content: space-between; align-items: baseline; margin-top: auto; padding-top: 12px; border-top: 1px dashed oklch(0.86 0.022 78); } .ds-commitment-amount { font-family: 'Instrument Serif', 'Times New Roman', serif; font-size: 22px; color: oklch(0.18 0.012 60); letter-spacing: -0.015em; font-variant-numeric: tabular-nums; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Family Ledger",
+    "overview": "Aliran is a shared household finance tracker used by families who want a single, honest view of where money flows. The design system takes its metaphor from a well-kept physical ledger: authoritative but domestic, precise without being cold. Every surface serves the record. Every element earns its place on the page.\n\nThe aesthetic is light, warm, and fixed — a deliberate choice made for a couple at the kitchen table, laptop open, reviewing what's due this month. The cream-parchment background is the paper. The forest green is the ink of authority. The serif display face appears only where the record needs a name and falls away entirely for the operational UI that surrounds it.\n\nAliran explicitly rejects: the widget-heavy dashboard congestion of Mint and YNAB; the dark-mode hype of trading and crypto apps; and the generic SaaS layout language of sidebar-plus-identical-card-grids.",
+    "keyCharacteristics": [
+      "Warm parchment light surface, forest green as the single authority accent",
+      "Three-font system with strict role separation: display (serif), sans (Inter), mono (JetBrains)",
+      "Full-palette semantic color for financial categories — sealed to data meaning, never decoration",
+      "Tonal layering for content; structural shadow for interactive controls",
+      "Tabular numerals throughout all monetary values"
+    ],
+    "rules": [
+      { "name": "The Semantic Seal Rule", "body": "The four finance-category colors (income/expense/scheduled/receivable) are sealed to their semantic roles. No other element in the UI uses these colors.", "section": "colors" },
+      { "name": "The OKLCH Doctrine", "body": "All color tokens are defined in OKLCH. The project does not use hex as a source-of-truth. Accept Stitch linter warnings.", "section": "colors" },
+      { "name": "The Instrument Rule", "body": "Instrument Serif appears for: service names, currency amounts, the sidebar logo, and hero headlines only. It is prohibited in buttons, form labels, navigation, table headers, and status indicators.", "section": "typography" },
+      { "name": "The Tabular Number Rule", "body": "All monetary values must carry font-variant-numeric: tabular-nums and font-feature-settings: tnum. Amounts in tables must align on the decimal point.", "section": "typography" },
+      { "name": "The Flat Content Rule", "body": "Cards, data tables, section containers, and dashboard tiles are flat at rest. Shadow on a card makes it feel like a button.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Instrument Serif for service names, currency amounts, the sidebar logo, and hero headlines only.",
+      "Do apply JetBrains Mono to all codes, identifiers, timestamps, table column headers, and status labels.",
+      "Do apply font-variant-numeric: tabular-nums to every monetary value.",
+      "Do use the four semantic colors (income/expense/scheduled/receivable) exclusively for their financial category.",
+      "Do keep content surfaces flat: cream-50 cards on cream-100 ground, ring hairline outline only.",
+      "Do render negative numbers, zero balances, and overdue commitments clearly and without alarm.",
+      "Do vary spacing for rhythm: 8px, 12px, 16px, 24px are different notes.",
+      "Do use the --line token for all borders and dividers."
+    ],
+    "donts": [
+      "Don't create widget-heavy layouts in the style of Mint or YNAB.",
+      "Don't use dark-mode hype aesthetics: neon accents, gamified UI, animated score counters.",
+      "Don't default to generic SaaS layout: sidebar plus identical card grids.",
+      "Don't use side-stripe borders (border-left or border-right greater than 1px as colored accent).",
+      "Don't use gradient text (background-clip: text with a gradient fill).",
+      "Don't use the four semantic category colors for hover states, focus rings, or decorative accents.",
+      "Don't add shadow to flat content cards.",
+      "Don't use Instrument Serif in buttons, form labels, navigation, table headers, or status indicators.",
+      "Don't animate layout properties (width, height, padding, margin).",
+      "Don't use #000 or #fff — every neutral is tinted toward the brand hue."
+    ]
+  }
+}

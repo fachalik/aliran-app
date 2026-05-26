@@ -1,4 +1,10 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { motion } from "framer-motion";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export function FooterCta() {
   return (
@@ -15,7 +21,14 @@ export function FooterCta() {
             "radial-gradient(ellipse 60% 50% at 50% 0%, oklch(0.40 0.07 155) 0%, transparent 70%), radial-gradient(ellipse 80% 40% at 50% 100%, oklch(0.30 0.05 155) 0%, transparent 70%)",
         }}
       />
-      <div className="relative" style={{ maxWidth: 720, margin: "0 auto" }}>
+      <motion.div
+        className="relative"
+        style={{ maxWidth: 720, margin: "0 auto" }}
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.72, ease }}
+      >
         <h2
           style={{
             fontFamily: "var(--font-display)",
@@ -45,19 +58,22 @@ export function FooterCta() {
           Setup 30 detik. Subscription patungan pertama-mu udah jalan sebelum
           kopi siap.
         </p>
-        <Button
-          size="lg"
-          className="rounded-full px-8 text-base"
+        <a
+          href="/signup"
+          className={cn(
+            buttonVariants({ size: "lg" }),
+            "rounded-full px-8 text-base",
+          )}
           style={{ background: "var(--cream-50)", color: "var(--forest-950)" }}
         >
           Daftar sekarang →
-        </Button>
+        </a>
         <p
           style={{ marginTop: 20, fontSize: 13, color: "oklch(0.72 0.03 90)" }}
         >
           Free tier selamanya · setup 30 detik · bot Telegram included
         </p>
-      </div>
+      </motion.div>
     </section>
   );
 }

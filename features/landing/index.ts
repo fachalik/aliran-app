@@ -1,5 +1,6 @@
 export { Nav } from "./nav";
 export { Hero } from "./hero";
+export { HowItWorks } from "./how-it-works";
 export { LogoStrip } from "./logo-strip";
 export { Welcome } from "./welcome";
 export { KpiTiles } from "./kpi-tiles";
